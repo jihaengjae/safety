@@ -414,6 +414,20 @@ document.querySelectorAll('.faq-q').forEach(q=>{
           onfocus="this.style.borderColor='#E8530E'" onblur="this.style.borderColor='#d0d7e2'">
       </div>
 
+      <!-- 상담과목 -->
+      <div style="margin-bottom:14px;">
+        <label style="display:block; font-size:13px; font-weight:700; color:#102A43; margin-bottom:5px;">상담과목 <span style="color:#E8530E;">*</span></label>
+        <select name="상담과목" required
+          style="width:100%; box-sizing:border-box; padding:10px 13px; border:1.5px solid #d0d7e2; border-radius:7px; font-size:14px; font-family:'Noto Sans KR',sans-serif; color:#102A43; background:#fff; outline:none; appearance:auto; transition:border-color .2s;"
+          onfocus="this.style.borderColor='#E8530E'" onblur="this.style.borderColor='#d0d7e2'">
+          <option value="" disabled selected>과목을 선택해주세요</option>
+          <option value="산업안전">산업안전</option>
+          <option value="위험물">위험물</option>
+          <option value="소방설비">소방설비</option>
+          <option value="기타">기타</option>
+        </select>
+      </div>
+
       <!-- 지역 -->
       <div style="margin-bottom:22px;">
         <label style="display:block; font-size:13px; font-weight:700; color:#102A43; margin-bottom:5px;">지역 <span style="color:#E8530E;">*</span></label>
@@ -473,6 +487,11 @@ document.querySelectorAll('.faq-q').forEach(q=>{
     document.getElementById('consult-success').style.display = 'none';
     document.getElementById('consult-form').style.display = 'block';
   }
+
+  // 페이지 로드 후 1초 뒤 자동으로 팝업 열기
+  window.addEventListener('load', function() {
+    setTimeout(openConsultPopup, 1000);
+  });
 
   document.getElementById('consult-overlay').addEventListener('click', function(e) {
     if (e.target === this) closeConsultPopup();
