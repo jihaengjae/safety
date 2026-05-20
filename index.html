@@ -444,16 +444,41 @@ document.querySelectorAll('.faq-q').forEach(q=>{
         </select>
       </div>
 
+      <!-- 개인정보 수집·이용 동의서 -->
+      <div style="margin-bottom:16px;">
+        <label style="display:block; font-size:13px; font-weight:700; color:#102A43; margin-bottom:6px;">개인정보 수집·이용 동의 <span style="color:#E8530E;">*</span></label>
+        <div style="background:#f5f7fa; border:1px solid #d0d7e2; border-radius:7px; padding:12px 14px; font-size:11.5px; color:#444; line-height:1.8; max-height:130px; overflow-y:auto; margin-bottom:10px;">
+          <strong>[개인정보 수집·이용 동의서]</strong><br><br>
+          <strong>1. 수집·이용 목적</strong><br>
+          고객 문의 응대, 서비스 제공 안내<br><br>
+          <strong>2. 수집 항목</strong><br>
+          필수: 성명, 연락처(휴대전화)<br><br>
+          <strong>3. 보유·이용 기간</strong><br>
+          수집일로부터 1년간 보관 후 즉시 파기<br>
+          (단, 관련 법령에 따라 보존이 필요한 경우 해당 기간까지 보관)<br><br>
+          <strong>4. 동의 거부 권리 및 불이익 안내</strong><br>
+          귀하는 개인정보 수집·이용에 동의하지 않을 권리가 있으며, 동의 거부 시 서비스 제공이 제한될 수 있습니다.
+        </div>
+        <div style="display:flex; gap:20px; align-items:center;">
+          <label style="display:flex; align-items:center; gap:7px; font-size:13px; font-weight:700; color:#102A43; cursor:pointer;">
+            <input type="radio" name="개인정보동의" value="동의함" id="privacy-agree" required
+              style="width:16px; height:16px; accent-color:#E8530E; cursor:pointer;">
+            동의함
+          </label>
+          <label style="display:flex; align-items:center; gap:7px; font-size:13px; font-weight:700; color:#667; cursor:pointer;">
+            <input type="radio" name="개인정보동의" value="동의하지 않음" id="privacy-disagree"
+              style="width:16px; height:16px; accent-color:#999; cursor:pointer;"
+              onchange="if(this.checked){ closeConsultPopup(); }">
+            동의하지 않음
+          </label>
+        </div>
+      </div>
+
       <!-- 제출 버튼 -->
       <button type="submit" id="consult-submit-btn"
         style="width:100%; padding:13px; background:#E8530E; color:#fff; border:none; border-radius:8px; font-size:15px; font-weight:800; font-family:'Noto Sans KR',sans-serif; cursor:pointer; transition:background .2s;">
         상담 신청하기
       </button>
-
-      <!-- 개인정보 안내 -->
-      <p style="margin:12px 0 0; font-size:11px; color:#999; text-align:center; line-height:1.5;">
-        입력하신 정보는 상담 목적으로만 사용되며,<br>제3자에게 제공되지 않습니다.
-      </p>
     </form>
 
     <!-- 제출 완료 메시지 (폼 제출 후 표시) -->
@@ -532,6 +557,7 @@ document.querySelectorAll('.faq-q').forEach(q=>{
   }
 </script>
 <!-- ===== 상담문의 팝업 끝 ===== -->
+
   
 </body>
 </html>
