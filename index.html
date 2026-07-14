@@ -112,6 +112,22 @@ tbody tr:hover{background:#F6F8FA}
   th,td{padding:9px 10px;font-size:13px}
 }
 </style>
+
+<!-- ==========================================
+  네이버 파워링크 전환추적 기본 스크립트
+  사이트명 : 산업안전_랜딩페이지
+  발급ID   : 179a22e853134b0
+  적용URL  : https://jihaengjae.github.io/safety/
+  ========================================== -->
+<script type="text/javascript" src="//wcs.pstatic.net/wcslog.js"></script>
+<script type="text/javascript">
+if(!wcs_add) var wcs_add = {};
+wcs_add["wa"] = "179a22e853134b0";
+if(window.wcs) {
+  wcs_do();
+}
+</script>
+
 </head>
 <body>
 
@@ -126,7 +142,8 @@ tbody tr:hover{background:#F6F8FA}
     <div class="hero-stat"><strong>95%</strong><span>기업 안전인력 채용난</span></div>
   </div>
   <div class="hero-ctas">
-    <a href="tel:052-267-3172" class="btn btn-primary">052-267-3172 무료 상담</a>
+    <!-- [전환추적] 전화 클릭 -->
+    <a href="tel:052-267-3172" class="btn btn-primary" onclick="naverConversionCall()">052-267-3172 무료 상담</a>
     <a href="https://www.jhj.education/" class="btn btn-ghost" target="_blank">교육과정 보기</a>
   </div>
   <div>
@@ -197,7 +214,10 @@ tbody tr:hover{background:#F6F8FA}
         <tr><td>강사진</td><td>울산 제조·화학 현장 출신 실무 강사<span class="badge badge-g">현장형</span></td><td>다과목 전임 강사</td><td>산업안전 분야 전문 강사</td></tr>
         <tr><td>취업 연계</td><td>울산 기업 채용 정보 + 이력서 컨설팅</td><td>수료생 취업 후기·연계</td><td>수강생 취업 연계 서비스</td></tr>
         <tr><td>위치</td><td>울산 남구 무거동</td><td>울산 남구 달동</td><td>울산 남구 신정동</td></tr>
-        <tr><td>연락처</td><td><a href="tel:052-267-3172">052-267-3172</a></td><td>052-***-*</td><td>052-***-*</td></tr>
+        <tr><td>연락처</td><td>
+          <!-- [전환추적] 전화 클릭 -->
+          <a href="tel:052-267-3172" onclick="naverConversionCall()">052-267-3172</a>
+        </td><td>052-***-*</td><td>052-***-*</td></tr>
       </tbody>
     </table>
   </div>
@@ -263,7 +283,10 @@ tbody tr:hover{background:#F6F8FA}
   </div>
   <div class="step">
     <span class="sn">2</span><strong>지행재 교육과정 상담</strong>
-    <p style="margin-top:6px;margin-bottom:0;font-size:14.5px"><a href="tel:052-267-3172">052-267-3172</a> 전화 또는 <a href="https://www.jhj.education/" target="_blank">홈페이지</a>에서 개강 일정·자비부담금 확인.</p>
+    <p style="margin-top:6px;margin-bottom:0;font-size:14.5px">
+      <!-- [전환추적] 전화 클릭 -->
+      <a href="tel:052-267-3172" onclick="naverConversionCall()">052-267-3172</a> 전화 또는 <a href="https://www.jhj.education/" target="_blank">홈페이지</a>에서 개강 일정·자비부담금 확인.
+    </p>
   </div>
   <div class="step active">
     <span class="sn">3</span><strong>고용24 수강 신청</strong>
@@ -336,7 +359,8 @@ tbody tr:hover{background:#F6F8FA}
   <span class="cta-urgency">좌석 한정 — 조기 마감 시 대기 등록</span>
   <h2>울산 안전관리전문가 커리어, 지금 시작하세요</h2>
   <p>2026년 시험 일정에 맞춰 학습하려면 지금이 적기입니다.<br>무료 상담으로 종합반·단과반 최적 코스를 안내받으세요.</p>
-  <a href="tel:052-267-3172" class="btn btn-primary">052-267-3172 전화 상담</a>
+  <!-- [전환추적] 전화 클릭 -->
+  <a href="tel:052-267-3172" class="btn btn-primary" onclick="naverConversionCall()">052-267-3172 전화 상담</a>
 </div>
 
 <div class="footer">
@@ -356,6 +380,7 @@ document.querySelectorAll('.faq-q').forEach(q=>{
   });
 });
 </script>
+
 <!--
 ===========================================================
   상담문의 팝업 코드 — jihaengjae.github.io/safety/
@@ -542,6 +567,15 @@ document.querySelectorAll('.faq-q').forEach(q=>{
         headers: { 'Accept': 'application/json' }
       });
       if (res.ok) {
+        // ==========================================
+        // [전환추적] 상담신청 폼 제출 완료 — 전환 기록
+        // ==========================================
+        if (window.wcs) {
+          var _nasa = {};
+          _nasa["cnv"] = wcs.cnv("1", "1"); // 전환유형 1 = 상담/회원가입
+          wcs_do(_nasa);
+        }
+        // ==========================================
         form.style.display = 'none';
         document.getElementById('consult-success').style.display = 'block';
       } else {
@@ -558,6 +592,19 @@ document.querySelectorAll('.faq-q').forEach(q=>{
 </script>
 <!-- ===== 상담문의 팝업 끝 ===== -->
 
-  
+<!-- ==========================================
+  [전환추적] 전화번호 클릭 전환 함수
+  전환유형 2 = 전화상담 클릭
+  ========================================== -->
+<script>
+function naverConversionCall() {
+  if (window.wcs) {
+    var _nasa = {};
+    _nasa["cnv"] = wcs.cnv("2", "1"); // 전환유형 2 = 전화상담
+    wcs_do(_nasa);
+  }
+}
+</script>
+
 </body>
 </html>
