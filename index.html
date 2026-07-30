@@ -8,19 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
 
-<!-- ==========================================
-  카카오 JavaScript SDK
-  ※ integrity 값은 최신 버전에 맞게 업데이트 필요 시 확인
-  https://developers.kakao.com/docs/latest/ko/sdk-download/js
-========================================== -->
-<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.1/kakao.min.js"
-  integrity="sha384-OLtyM/iuPLtW5U3XcvLSGhE8JzRekDank5InqlHGwPhb4140/yrBw0bg0y7+C9J"
-  crossorigin="anonymous"></script>
-<script>
-  // ★★★ 여기에 카카오 디벨로퍼스의 JavaScript 앱 키를 입력하세요 ★★★
-  // developers.kakao.com → 내 애플리케이션 → 앱 키 → JavaScript 키
-  Kakao.init('c1d45cc5534247af0578748d5aa88bd65');
-</script>
+<!-- 카카오채널: SDK 불필요, window.open 방식 사용 -->
 
 <style>
 :root{
@@ -471,18 +459,11 @@ document.querySelectorAll('.faq-q').forEach(q=>{
 ========================================== -->
 <script>
 function addKakaoChannel() {
-  Kakao.Channel.followChannel({
-    // ★★★ 여기에 채널 Public ID를 입력하세요 ★★★
-    // 카카오 채널 관리자센터 → 채널 홈 설정 → 채널 URL에서 확인
-    // 예: pf.kakao.com/_abc123 이면 → '_abc123' 입력
-    channelPublicId: '_bnxnAX'
-  })
-  .then(function(res) {
-    console.log('채널 추가 성공:', res);
-  })
-  .catch(function(err) {
-    console.error('채널 추가 오류:', err);
-  });
+  window.open(
+    'https://pf.kakao.com/_bnxnAX/friend',
+    'kakaoChannel',
+    'width=440,height=580,scrollbars=no,resizable=no'
+  );
 }
 </script>
 
