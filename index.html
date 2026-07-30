@@ -7,6 +7,21 @@
 <meta name="description" content="울산 유일 산업안전·위험물·소방설비 3종 원스톱 교육. 지행재직업전문학교 종합반·단과반 국비지원 수강생 모집 중. 2026 시험일정, 경쟁사 비교, 합격 전략까지 한눈에.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+
+<!-- ==========================================
+  카카오 JavaScript SDK
+  ※ integrity 값은 최신 버전에 맞게 업데이트 필요 시 확인
+  https://developers.kakao.com/docs/latest/ko/sdk-download/js
+========================================== -->
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.1/kakao.min.js"
+  integrity="sha384-OLtyM/iuPLtW5U3XcvLSGhE8JzRekDank5InqlHGwPhb4140/yrBw0bg0y7+C9J"
+  crossorigin="anonymous"></script>
+<script>
+  // ★★★ 여기에 카카오 디벨로퍼스의 JavaScript 앱 키를 입력하세요 ★★★
+  // developers.kakao.com → 내 애플리케이션 → 앱 키 → JavaScript 키
+  Kakao.init('여기에_JavaScript_앱_키_입력');
+</script>
+
 <style>
 :root{
   --navy:#102A43;--blue:#1B3A5C;--accent:#E8530E;--accent-hover:#D14400;
@@ -33,6 +48,37 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text
 .btn-ghost{border:1.5px solid rgba(255,255,255,.5);color:#fff;padding:12px 28px;font-size:14.5px;margin-left:10px}
 .btn-ghost:hover{background:rgba(255,255,255,.1)}
 .hero-ctas{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+
+/* ====== 카카오채널 버튼 스타일 ====== */
+.btn-kakao{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#FEE500;color:#3A1D1D;
+  padding:12px 22px;font-size:14.5px;font-weight:700;
+  border-radius:8px;border:none;cursor:pointer;
+  font-family:'Noto Sans KR',sans-serif;
+  box-shadow:0 4px 14px rgba(254,229,0,.4);
+  transition:transform .2s,box-shadow .2s;
+  text-decoration:none;
+}
+.btn-kakao:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(254,229,0,.55);}
+.kakao-badge{
+  display:inline-flex;align-items:center;justify-content:center;
+  background:#3A1D1D;color:#FEE500;
+  width:22px;height:22px;border-radius:50%;
+  font-size:10px;font-weight:900;flex-shrink:0;letter-spacing:-.5px;
+}
+
+/* ====== 플로팅 카카오채널 버튼 (우하단 고정) ====== */
+.kakao-float{
+  position:fixed;bottom:28px;right:24px;z-index:1000;
+  display:flex;align-items:center;gap:8px;
+  background:#FEE500;color:#3A1D1D;
+  border:none;border-radius:50px;padding:12px 20px;
+  font-size:14px;font-weight:700;font-family:'Noto Sans KR',sans-serif;
+  cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.25);
+  transition:transform .2s,box-shadow .2s;
+}
+.kakao-float:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.3);}
 
 .wrap{max-width:760px;margin:0 auto;padding:0 20px}
 .section{padding:44px 0}
@@ -104,12 +150,16 @@ tbody tr:hover{background:#F6F8FA}
 
 .footer{text-align:center;padding:28px 20px;font-size:12.5px;color:var(--sub);border-top:1px solid var(--border)}
 
+/* 상담 팝업 */
+#consult-overlay{display:none;position:fixed;inset:0;background:rgba(10,25,47,0.75);z-index:9999;align-items:center;justify-content:center;}
+
 @media(max-width:600px){
   .hero{padding:52px 16px 44px}
   .hero-stats{gap:16px}
   .hero-ctas{flex-direction:column;align-items:center}
   .btn-ghost{margin-left:0}
   th,td{padding:9px 10px;font-size:13px}
+  .kakao-float{bottom:20px;right:16px;padding:10px 16px;font-size:13px;}
 }
 </style>
 <!-- Google Tag Manager -->
@@ -119,30 +169,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-TC7Z5NPC');</script>
 <!-- End Google Tag Manager -->
-  
-<!-- ==========================================
-  네이버 파워링크 전환추적 기본 스크립트
-  사이트명 : 산업안전_랜딩페이지
-  발급ID   : 179a22e853134b0
-  적용URL  : https://jihaengjae.github.io/safety/
-  ========================================== -->
 <script type="text/javascript" src="//wcs.pstatic.net/wcslog.js"></script>
 <script type="text/javascript">
 if(!wcs_add) var wcs_add = {};
 wcs_add["wa"] = "179a22e853134b0";
-if(window.wcs) {
-  wcs_do();
-}
+if(window.wcs) { wcs_do(); }
 </script>
-
 </head>
 <body>
-
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TC7Z5NPC"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-  
+
 <!-- ══════ HERO ══════ -->
 <header class="hero">
   <span class="tag">2026 국비지원 수강생 모집 중</span>
@@ -154,12 +192,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-stat"><strong>95%</strong><span>기업 안전인력 채용난</span></div>
   </div>
   <div class="hero-ctas">
-    <!-- [전환추적] 전화 클릭 -->
     <a href="tel:052-267-3172" class="btn btn-primary" onclick="naverConversionCall()">052-267-3172 무료 상담</a>
     <a href="https://www.jhj.education/" class="btn btn-ghost" target="_blank">교육과정 보기</a>
   </div>
-  <div>
-  <button onclick="openConsultPopup()" class="btn-primary" style="cursor:pointer; border:none;">📋 상담 문의</button>  
+  <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:10px;">
+    <button onclick="openConsultPopup()" class="btn-primary" style="cursor:pointer;border:none;font-family:'Noto Sans KR',sans-serif;border-radius:8px;font-weight:700;padding:13px 28px;font-size:15px;">📋 상담 문의</button>
+    <!-- ★ 카카오채널 추가 버튼 -->
+    <button class="btn-kakao" onclick="addKakaoChannel()">
+      <span class="kakao-badge">Ch</span>
+      카카오채널 추가
+    </button>
   </div>
 </header>
 
@@ -226,9 +268,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <tr><td>강사진</td><td>울산 제조·화학 현장 출신 실무 강사<span class="badge badge-g">현장형</span></td><td>다과목 전임 강사</td><td>산업안전 분야 전문 강사</td></tr>
         <tr><td>취업 연계</td><td>울산 기업 채용 정보 + 이력서 컨설팅</td><td>수료생 취업 후기·연계</td><td>수강생 취업 연계 서비스</td></tr>
         <tr><td>위치</td><td>울산 남구 무거동</td><td>울산 남구 달동</td><td>울산 남구 신정동</td></tr>
-        <tr><td>연락처</td><td>
-          <a href="tel:052-267-3172" onclick="naverConversionCall()">052-267-3172</a>
-        </td><td>052-***-*</td><td>052-***-*</td></tr>
+        <tr><td>연락처</td><td><a href="tel:052-267-3172" onclick="naverConversionCall()">052-267-3172</a></td><td>052-***-*</td><td>052-***-*</td></tr>
       </tbody>
     </table>
   </div>
@@ -323,32 +363,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ══════ ⑨ FAQ (BOFU) ══════ -->
 <section class="section" id="faq">
   <h2>자주 묻는 질문</h2>
-
   <div class="faq">
     <div class="faq-q">Q. 산업안전기사/산업기사와 산업안전기사, 뭐가 다른가요?</div>
     <div class="faq-a"><b>산업기사는 전문대졸 또는 기능사+실무 1년이면 응시 가능한 진입 자격이고, 기사는 4년제 졸업 또는 산업기사+실무 1년이 필요한 상위 자격입니다.</b> 두 자격 모두 안전관리자 선임이 가능하지만 대형 현장에서는 기사급이 우대됩니다. 산업기사로 현장 경력을 쌓은 뒤 기사에 도전하는 경로가 가장 효율적입니다.</div>
   </div>
-
   <div class="faq">
     <div class="faq-q">Q. 비전공자도 응시 가능한가요?</div>
     <div class="faq-a"><b>네, 학점은행제으로 관련 학점을 이수, 현장경력으로 비전공자도 응시 자격을 갖출 수 있습니다.</b> 내일배움카드는 전공 무관 발급 가능하며, 지행재에서 응시 자격 확보 방법에 대한 사전 상담도 제공합니다.</div>
   </div>
-
   <div class="faq">
     <div class="faq-q">Q. 재직자도 수강할 수 있나요?</div>
     <div class="faq-a"><b>가능합니다.</b> 재직자 직무능력향상 훈련으로 내일배움카드를 사용할 수 있고, 울산 산업단지 근무자를 위한 야간반도 운영됩니다.</div>
   </div>
-
   <div class="faq">
     <div class="faq-q">Q. 자비부담금은 얼마인가요?</div>
     <div class="faq-a"><b>개인 상황에 따라 다릅니다.</b> 일반 구직자 기준 정부 지원율 45%~85%, 국민취업지원제도 참여자 50%~85%, 과정평가형 참여자 72.5%~92.5%. 2026년부터 자기부담금 상한 60만 원으로 제한, 울산 남구 고용위기 선제대응지역 훈련비지원 최대 100%.</div>
   </div>
-
   <div class="faq">
     <div class="faq-q">Q. 취득 후 울산에서 어디에 취업하나요?</div>
     <div class="faq-a"><b>울산은 전국 최고 수준의 안전관리자 수요 지역입니다.</b> HD현대중공업 및 협력사, SK에너지, 현대자동차 울산공장, 에쓰오일, 중소 건설사, 안전관리 대행기관에서 꾸준히 채용합니다. 위험물산업기사를 추가 취득하면 석유화학 분야 경쟁력이 배가됩니다.</div>
   </div>
-
   <div class="faq">
     <div class="faq-q">Q. 지행재가 다른 울산 학원과 다른 점은?</div>
     <div class="faq-a"><b>울산 유일의 안전 3대 자격 특화 학교이며, 종합반·단과반 선택이 가능합니다.</b> 울산직업전문학교는 전기·건축·회계 등 넓게 다루고, 한국안전기술학원은 산업안전·위험물에 집중하지만 소방설비 과정은 미운영. 지행재는 세 자격을 한 곳에서 가르치며 겹치는 출제 범위를 한 흐름으로 학습하는 연계 커리큘럼을 운영합니다.</div>
@@ -380,6 +414,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </main>
 
+<!-- ★ 플로팅 카카오채널 버튼 (화면 우하단 고정) -->
+<button class="kakao-float" onclick="addKakaoChannel()" title="카카오채널 추가">
+  <span class="kakao-badge">Ch</span>
+  카카오채널 추가
+</button>
+
 <script>
 document.querySelectorAll('.faq-q').forEach(q=>{
   q.addEventListener('click',()=>{
@@ -393,65 +433,60 @@ document.querySelectorAll('.faq-q').forEach(q=>{
 <!-- ===== 상담문의 팝업 오버레이 (구글폼 연동) ===== -->
 <div id="consult-overlay" style="display:none; position:fixed; inset:0; background:rgba(10,25,47,0.75); z-index:9999; align-items:center; justify-content:center;">
   <div style="background:#fff; border-radius:12px; width:92%; max-width:520px; padding:28px 24px 20px; box-shadow:0 20px 60px rgba(0,0,0,0.35); position:relative; font-family:'Noto Sans KR',sans-serif;">
-
-    <!-- 닫기 버튼 -->
     <button onclick="closeConsultPopup()" aria-label="닫기"
       style="position:absolute; top:14px; right:16px; background:none; border:none; font-size:22px; color:#667; cursor:pointer; line-height:1;">&#10005;</button>
-
-    <!-- 헤더 -->
     <div style="margin-bottom:16px;">
       <p style="margin:0 0 4px; font-size:12px; font-weight:700; letter-spacing:1.5px; color:#E8530E; text-transform:uppercase;">지행재직업전문학교</p>
       <h2 style="margin:0; font-size:20px; font-weight:800; color:#102A43; line-height:1.3;">무료 수강 상담 문의</h2>
       <p style="margin:6px 0 0; font-size:13px; color:#555;">아래 양식을 작성하시면 빠르게 연락드리겠습니다.</p>
     </div>
-
-    <!-- 구글폼 iframe 삽입 -->
     <iframe
       src="https://docs.google.com/forms/d/e/1FAIpQLScvNmfZzWD6zz5dwgGpkz_KkpsVwTQlCqHSU7wEJ49Nw3VQpA/viewform?embedded=true"
-      width="100%"
-      height="480"
-      frameborder="0"
-      marginheight="0"
-      marginwidth="0"
-      style="border-radius:8px; display:block;"
-    >로딩 중…</iframe>
-
+      width="100%" height="480" frameborder="0" marginheight="0" marginwidth="0"
+      style="border-radius:8px; display:block;">로딩 중…</iframe>
   </div>
 </div>
 
-<!-- ===== 팝업 제어 스크립트 ===== -->
 <script>
   function openConsultPopup() {
     var overlay = document.getElementById('consult-overlay');
     overlay.style.display = 'flex';
     document.body.style.overflow = 'hidden';
   }
-
   function closeConsultPopup() {
-    var overlay = document.getElementById('consult-overlay');
-    overlay.style.display = 'none';
+    document.getElementById('consult-overlay').style.display = 'none';
     document.body.style.overflow = '';
   }
-
-  // 페이지 로드 후 1초 뒤 자동으로 팝업 열기
-  window.addEventListener('load', function() {
-    setTimeout(openConsultPopup, 1000);
-  });
-
+  window.addEventListener('load', function() { setTimeout(openConsultPopup, 1000); });
   document.getElementById('consult-overlay').addEventListener('click', function(e) {
     if (e.target === this) closeConsultPopup();
   });
-
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeConsultPopup();
   });
 </script>
-<!-- ===== 상담문의 팝업 끝 ===== -->
 
 <!-- ==========================================
-  [전환추적] 전화번호 클릭 전환 함수
-  전환유형 2 = 전화상담 클릭
-  ========================================== -->
+  ★★★ 카카오채널 추가 함수 ★★★
+========================================== -->
+<script>
+function addKakaoChannel() {
+  Kakao.Channel.followChannel({
+    // ★★★ 여기에 채널 Public ID를 입력하세요 ★★★
+    // 카카오 채널 관리자센터 → 채널 홈 설정 → 채널 URL에서 확인
+    // 예: pf.kakao.com/_abc123 이면 → '_abc123' 입력
+    channelPublicId: '여기에_채널_Public_ID_입력'
+  })
+  .then(function(res) {
+    console.log('채널 추가 성공:', res);
+  })
+  .catch(function(err) {
+    console.error('채널 추가 오류:', err);
+  });
+}
+</script>
+
+<!-- 네이버 전환추적 함수 -->
 <script>
 function naverConversionCall() {
   if (window.wcs) {
