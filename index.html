@@ -186,10 +186,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:10px;">
     <button onclick="openConsultPopup()" class="btn-primary" style="cursor:pointer;border:none;font-family:'Noto Sans KR',sans-serif;border-radius:8px;font-weight:700;padding:13px 28px;font-size:15px;">📋 상담 문의</button>
     <!-- ★ 카카오채널 추가 버튼 -->
-    <button class="btn-kakao" onclick="addKakaoChannel()">
+    <a href="https://pf.kakao.com/_bnxnAX" target="_blank" class="btn-kakao">
       <span class="kakao-badge">Ch</span>
       카카오채널 추가
-    </button>
+    </a>
   </div>
 </header>
 
@@ -403,10 +403,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </main>
 
 <!-- ★ 플로팅 카카오채널 버튼 (화면 우하단 고정) -->
-<button class="kakao-float" onclick="addKakaoChannel()" title="카카오채널 추가">
+<a href="https://pf.kakao.com/_bnxnAX" target="_blank" class="kakao-float" title="카카오채널 추가">
   <span class="kakao-badge">Ch</span>
   카카오채널 추가
-</button>
+</a>
 
 <script>
 document.querySelectorAll('.faq-q').forEach(q=>{
@@ -457,15 +457,6 @@ document.querySelectorAll('.faq-q').forEach(q=>{
 <!-- ==========================================
   ★★★ 카카오채널 추가 함수 ★★★
 ========================================== -->
-<script>
-function addKakaoChannel() {
-  window.open(
-    'https://pf.kakao.com/_bnxnAX/friend',
-    'kakaoChannel',
-    'width=440,height=580,scrollbars=no,resizable=no'
-  );
-}
-</script>
 
 <!-- 네이버 전환추적 함수 -->
 <script>
