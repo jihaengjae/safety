@@ -539,7 +539,8 @@ document.querySelectorAll('.faq-q').forEach(q=>{
     document.getElementById('consult-overlay').style.display = 'none';
     document.body.style.overflow = '';
   }
-  window.addEventListener('load', function() { setTimeout(openConsultPopup, 1000); });
+  /* 자동 팝업 해제 (2026-10-26) — 상담 문의 버튼을 눌렀을 때만 열림 */
+  // window.addEventListener('load', function() { setTimeout(openConsultPopup, 1000); });
   document.getElementById('consult-overlay').addEventListener('click', function(e) {
     if (e.target === this) closeConsultPopup();
   });
